@@ -1,0 +1,33 @@
+<%= bootstrap_form_for [@user, @meeting] do |f| %>
+  <% if @meeting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+
+      <ul>
+      <% @meeting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row">
+<div class="col-xs-offset-1 col-xs-10 col-xs-offset-1 col-sm-offset-2 col-sm-8 col-sm-offset-2 col-md-offset-3 col-md-6 col-md-offset-3 col-lg-offset-3 col-lg-6 col-lg-offset-3">
+
+    <%= f.select :location, ['Ocean Beach', "Ocean Beach"] %>
+ 
+    <%= f.text_field :wave_height %>
+ 
+    <%= f.select :description, [['FLAT', "FLAT"], ['HORRIBLE', "HORRIBLE"], ['POOR', "POOR"], ['MEDIOCRE', "MEDIOCRE"], ['GOOD', "GOOD"], ['GREAT', "GREAT"], ['EPIC', "EPIC"]] %>
+
+    <%= f.text_area :notes %>
+
+    <%= f.label :start_time %><br>
+    <%= f.datetime_select :start_time %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>
+</div>
+<% end %>

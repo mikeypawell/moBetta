@@ -1,0 +1,59 @@
+
+
+<%= bootstrap_form_for [@user, @meeting] do |f| %>
+  <% if @meeting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@meeting.errors.count, "error") %> prohibited this meeting from being saved:</h2>
+
+      <ul>
+      <% @meeting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.hidden_field :localTimestamp, :value => "#{@response[4]["localTimestamp"]}"%>
+    <%= f.hidden_field :minBreakingHeight, :value => "#{@response[4]["swell"]["minBreakingHeight"]}"%>
+    <%= f.hidden_field :maxBreakingHeight , :value => "#{@response[4]["swell"]["maxBreakingHeight"]}"%>
+    <%= f.hidden_field :primaryHeight, :value => "#{@response[4]["swell"]["components"]["primary"]["height"]}"%>
+    <%= f.hidden_field :primaryPeriod, :value => "#{@response[4]["swell"]["components"]["primary"]["period"]}"%>
+    <%= f.hidden_field :primaryDirection, :value => "#{@response[4]["swell"]["components"]["primary"]["direction"]}"%>
+    <%= f.hidden_field :primaryCompass, :value => "#{@response[4]["swell"]["components"]["primary"]["compassDirection"]}"%>
+    <%= f.hidden_field :secondaryHeight, :value => "#{@response[4]["swell"]["components"]["secondary"]["height"]}"%>
+    <%= f.hidden_field :secondaryPeriod, :value => "#{@response[4]["swell"]["components"]["secondary"]["period"]}"%>
+    <%= f.hidden_field :secondaryDirection, :value => "#{@response[4]["swell"]["components"]["secondary"]["direction"]}"%>
+    <%= f.hidden_field :secondaryCompass, :value => "#{@response[4]["swell"]["components"]["secondary"]["compassDirection"]}"%>
+    <%= f.hidden_field :windSpeed, :value => "#{@response[4]["wind"]["speed"]}"%>
+    <%= f.hidden_field :windDirection, :value => "#{@response[4]["wind"]["direction"]}"%>
+    <%= f.hidden_field :windCompass, :value => "#{@response[4]["wind"]["compassDirection"]}"%>
+    <%= f.hidden_field :temperature, :value => "#{@response[4]["condition"]["temperature"]}"%>
+    <%= f.hidden_field :user_id, :value => "#{@user.id}" %>
+  </div>
+
+<div class="row">
+<div class="col-xs-offset-1 col-xs-10 col-xs-offset-1 col-sm-offset-2 col-sm-8 col-sm-offset-2 col-md-offset-3 col-md-6 col-md-offset-3 col-lg-offset-3 col-lg-6 col-lg-offset-3">
+  <div class="field"> 
+    <%= f.select :location, ['Ocean Beach', "Ocean Beach"] %>
+  </div>
+  <div class="field">
+    <%= f.text_field :wave_height %>
+  </div>
+  <div class="field">
+   <%= f.select :description, [['FLAT', "FLAT"], ['HORRIBLE', "HORRIBLE"], ['POOR', "POOR"], ['MEDIOCRE', "MEDIOCRE"], ['GOOD', "GOOD"], ['GREAT', "GREAT"], ['EPIC', "EPIC"]] %>
+  <div class="field">
+    <%= f.text_field :board %>
+  </div>
+  </div>
+  <div>
+    <%= f.text_area :notes %>
+  </div>
+
+  <div class="field">
+    <%= f.datetime_select :start_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</div>
+<% end %>

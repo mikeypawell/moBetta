@@ -1,0 +1,312 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require rails_bootstrap_forms
+ *= require_tree .
+ *= require_self
+ */
+
+ 
+
+input.btn.btn-default {
+  width:100%;
+  background-color:rgb(40,184,174);
+  border:none;
+  color: white;
+  text-decoration: none;
+  font-size: 30px 
+}
+
+.sign-up {
+  margin-top:50px;
+  text-align: center;
+}
+
+.navbar-right {
+  color: white;
+  font-size: 18px;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+  font-size: 18px;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: white;
+}
+.navbar-default .navbar-brand {
+  color: white;
+  font-size: 30px;
+  border: black;
+  
+}
+
+.navbar-custom {
+  color: white;
+  background-color: black;
+}
+
+.navbar-header {
+  color: white;
+  background-color: black;
+  font-size: 30px;
+}
+
+.container-fluid {
+  color: white;
+  background-color: black;
+  font-size: 30px;
+}
+
+.calendar-day {
+  cursor: pointer;
+  text-align: right;
+}
+.surf-location-summary h5 {
+	text-align: center;
+  margin-top:-10px;
+  }
+.surf-location-summary {
+  text-align: center;
+  margin-top:-10px;
+  }
+
+.surf-wave-height-summary h5 {
+  text-align: center;
+  position: relative;
+  margin-top: -12px;
+  margin-left: 4px;
+}
+
+.surf-wave-height-summary {
+  text-align: center;
+  position: relative;
+  margin-top: -35px;
+  margin-left: 4px;
+}
+
+.simple-calendar {
+	color: black;
+	text-align: center;
+	font-size: 30px; 
+  margin-left:30px; 
+  margin-right:30px;
+}
+
+.simple-calendar a {
+	color: black;
+	font-size: 12px;
+	margin-right: 10px;
+	margin-left: 10px;
+	vertical-align: center;
+	text-decoration: none;
+}
+
+.simple-calendar a:hover{
+	background-color: transparent;
+}
+
+.personal-description {
+	text-align: left;
+  margin-left: 20px;
+}
+
+.report-title {
+	padding:10px;
+  background-color:rgb(40,184,174);
+  color: white;
+  margin-top: -21px;
+  padding-left: 20px;
+}
+
+.surf-description {
+  font-size: 50px;
+  width: 300px;
+  font-weight:;
+  text-align: left; 
+
+}
+
+.report {
+  
+
+}
+.show-buttons {
+  text-decoration: none;
+  color:transparent;
+  outline:none;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+@media only screen and (max-device-width: 1000px) {
+
+button.btn.btn-default.btn-md {
+  background-color:rgb(40,184,174);
+  border:none;
+  text-decoration: none;
+  color:white;
+  width:500px;
+  height:50px;
+  font-size: 20px;
+  position: relative;
+  right: 100px;
+}
+
+}
+
+button.btn.btn-default.btn-md {
+  background-color:rgb(40,184,174);
+  border:none;
+  text-decoration: none;
+  color:white;
+  width:200px;
+  height:50px;
+  font-size: 20px;
+  position: relative;
+  right: 100px;
+
+}
+
+button.btn.btn-default.btn-md a {
+  background-color:rgb(40,184,174);
+  border:none;
+  text-decoration: none;
+  color:white;
+}
+
+a:hover{
+	background-color: transparent;
+	color:transparent;
+	outline:none;
+	background-color: transparent;
+	text-decoration: none;
+	color:black;
+}
+.new-session {
+	position: right;
+}
+
+h1.tag-line-top {
+    margin-top:50px;
+    margin-bottom:80px;
+    font-size: 80px;
+    color: black;
+    margin-bottom:-9px;
+    top:20px;
+    right:150px;
+    position: absolute;
+}
+
+h1.tag-line-bottom {
+    margin-top:50px;
+    margin-bottom:80px;
+    font-size: 80px;
+    color: #3377ff;
+    margin-top:-9px;
+    top:250px;
+    right:-160px;
+    position: absolute;
+}
+
+.welcome-image {
+  position: relative;
+  margin-top: 50px;
+}
+
+h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 100px;
+}
+  table {
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    max-width: 80%;
+    width: 80%;
+    color: black;
+    padding-top: 20px;
+    margin-top: 20px;
+    
+  }
+
+  tr {
+    border-collapse: collapse;
+    font-size: 14px; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+
+  th {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    text-align: right;
+  }
+
+  td {
+    padding: 6px;
+    vertical-align: top;
+    width: 14%;
+    height: 14%;
+
+    border: 1px solid #ddd;
+    border-top-color: rgb(221, 221, 221);
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(221, 221, 221);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(221, 221, 221);
+    border-left-style: solid;
+    border-left-width: 1px;
+    text-align: right;
+  }
+
+  .day {
+    height: 80px;
+    background-color: white;
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {
+    background: #FFFFC0
+  }
+
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {
+    background: #DDD;
+  }
+  .next-month {
+    background: #DDD;
+  }
+  .current-month {}
+
+  .has-events {}
+}
+
+

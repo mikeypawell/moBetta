@@ -1,0 +1,35 @@
+<%= render partial: "/layouts/navbar" %>
+
+
+<p id="notice"><%= notice %></p>
+
+
+
+<div class="row">
+  <div class="col-xs-offset-10 col-xs-1">
+  <button class="btn btn-default btn-md " type="submit">
+    <%= link_to 'New Meeting', new_user_meeting_path(current_user) %>
+    </button>
+</div>
+</div>
+
+
+    <%= month_calendar events: @meetings do |date, meetings| %>
+    <%= date.mday %>
+
+    <% meetings.each do |meeting| %>
+    <div class="surf-location-summary">
+      <a><%=link_to user_meeting_path(meeting.user_id, meeting) do %>
+      <h5><%=meeting.location%> </h5>
+      <% end %>
+      </a>
+    </div>
+
+    <div class="surf-wave-height-summary">
+      <a><%=link_to user_meeting_path(meeting.user_id, meeting) do %>
+      <h5><%=meeting.wave_height%> ft </h5>
+      <% end %>
+      </a>
+    </div>
+    <% end %>
+    <% end %>

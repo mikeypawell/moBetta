@@ -1,0 +1,71 @@
+<%= render partial: "/layouts/navbar" %>
+
+
+<p id="notice"><%= notice %></p>
+
+
+<div class = "report">
+	<div class="report-title">
+
+		<%= link_to 'Calendar', user_meetings_path %> 
+		
+		<h1>
+			<%= @meeting.location %>
+		</h1>
+
+		<div class="surf-session-date">
+
+			<h4><%= @meeting.start_time.to_date.strftime("%B %d, %Y") %></h4>	
+			<h4><%= @meeting.start_time.strftime("%H:%M")%></h4>	
+		</div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-xs-10 personal-description">
+		<p id="notice"><%= notice %></p>
+
+
+		<h6>
+			<%= @meeting.wave_height %> ft
+		</h6>
+		<div class = "surf-description">
+			<h3>conditions: <%= @meeting.description %> </h3>
+			<h3>board: <%= @meeting.board %> </h3>
+		</div>
+		<p>
+			Notes: <%= @meeting.notes %>
+		</p>
+           
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Wave Height</th>
+					<th>Primary Swell</th>
+					<th>Secondary Swell</th>
+					<th>Wind</th>
+					<th>Temperature</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><%=@meeting.minBreakingHeight%> - <%= @meeting.maxBreakingHeight %> ft</td>
+					<td><%=@meeting.primaryHeight%>ft <br> <%= @meeting.primaryPeriod %> seconds 
+						<br><%=@meeting.primaryCompass %> <%=@meeting.primaryDirection%> degrees 
+					</td>
+					<td><%=@meeting.secondaryHeight%>ft <br> <%= @meeting.secondaryPeriod %> seconds 
+						<br><%=@meeting.secondaryCompass %> <%=@meeting.secondaryDirection%> degrees </td>
+						<td><%=@meeting.windSpeed%> mph <br> <%=@meeting.windCompass%> <%=@meeting.windDirection%> degrees 
+						</td>
+					<td> Air: <%=@meeting.temperature %> degrees</td>
+				</tr>
+			
+				</tbody>
+			</table>
+
+<%= link_to 'Edit', edit_user_meeting_path(@user, @meeting) %> 
+<%= link_to 'Delete', delete_user_meeting_path(@user, @meeting), method: :delete, data:{confirm: "#{@user.name} are you sure you to delete this post?" } %>
+		</div>
+	</div>
+</div>
